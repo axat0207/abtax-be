@@ -32,14 +32,14 @@ const gstFilling = async (req, res) => {
     const purchaseBillPath = req.files?.purchaseBill?.[0]?.path;
 
     if (!saleBillPath || !purchaseBillPath) {
-      return res.status(400).json({ message: "Sale Bill and Purchase Bill files are required." });
+      return res
+        .status(400)
+        .json({ message: "Sale Bill and Purchase Bill files are required." });
     }
 
     const saleBill = await uploadOnCloudinary(saleBillPath);
     const purchaseBill = await uploadOnCloudinary(purchaseBillPath);
-  
-      const otherBill = await uploadOnCloudinary(otherBillPath);
-    
+    const otherBill = await uploadOnCloudinary(otherBillPath);
 
     const setGstFiling = await gstFiling.create({
       userName,
