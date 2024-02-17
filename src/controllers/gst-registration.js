@@ -20,24 +20,6 @@ const gstRegistrationController = async (req, res) => {
     wardNumberVillage,
     stateUT,
   } = req.body;
-  console.log({
-    userType,
-    panOrAadharName,
-    gender,
-    panNumber,
-    aadharNumber,
-    email,
-    mobileNumber,
-    businessPurpose,
-    fatherName,
-    dateOfBirth,
-    indianState,
-    districtCity,
-    subDivisionTehsil,
-    pinCode,
-    wardNumberVillage,
-    stateUT,
-  });
   try {
     const aadharCardPath = req.files.aadharCard[0].path;
     const panCardPath = req.files.panCard[0].path;
@@ -72,16 +54,6 @@ const gstRegistrationController = async (req, res) => {
       ownershipDocumentShopPath
     );
     const electricityBill = await uploadOnCloudinary(electricityBillPath);
-
-    console.log({
-      aadharCard,
-      panCard,
-      passportPhoto,
-      bankDetails,
-      gumastaMsmeKhasraElectricityBill,
-      ownershipDocumentShop,
-      electricityBill,
-    });
 
     const registrationEntry = await gstRegistration.create({
       userType,

@@ -75,33 +75,32 @@ const gstRegistrationSchema = new Schema({
     required: [true, "State/UT is required"],
     // Add enum if there are predefined options for states/UT
   },
-  aadharCardFile: {
+  aadharCard: {
+    type: String,
+  },
+  panCard: {
     type: String,
     // File handling logic required
   },
-  panCardFile: {
+  passportPhoto: {
     type: String,
     // File handling logic required
   },
-  passportPhotoFile: {
-    type: String,
-    // File handling logic required
-  },
-  electricityBillFile: {
+  electricityBill: {
     type: String,
     // Optional, file handling logic required
   },
-  ownershipDocumentShopFile: {
+  ownershipDocumentShop: {
     type: String,
     required: [true, "Ownership document shop is required"],
     // File handling logic required
   },
-  gumastaMsmeKhasraElectricityBillFile: {
+  gumastaMsmeKhasraElectricityBill: {
     type: String,
     required: [true, "Gumasta/MSME/Khasra/Electricity bill is required"],
     // File handling logic required
   },
-  bankDetailsFile: {
+  bankDetails: {
     type: String,
     required: [true, "Bank details are required"],
     // File handling logic required
