@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 
 app.use(express.static("public"));
 
-app.get("/helloBackend", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Server Is working Fine at root");
 });
 
