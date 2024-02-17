@@ -2,7 +2,7 @@ import { incomeTaxRegistration } from "../models/incometax-registration.js";
 import uploadOnCloudinary from "../utils/cloudinary.js";
 
 const itrRegistration = async (req, res) => {
-  console.log(" nhell ");
+
   // Destructure the body to match model fields exactly
   const {
     userType, // corrected from 'select' to match the model
