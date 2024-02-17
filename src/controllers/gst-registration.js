@@ -2,7 +2,6 @@ import { gstRegistration } from "../models/gst-registration.js";
 import uploadOnCloudinary from "../utils/cloudinary.js";
 
 const gstRegistrationController = async (req, res) => {
-  // Destructure the body to match the gstRegistration model fields
   const {
     userType,
     panOrAadharName,
@@ -20,7 +19,6 @@ const gstRegistrationController = async (req, res) => {
     pinCode,
     wardNumberVillage,
     stateUT,
-    // Fields for file uploads are handled separately
   } = req.body;
   console.log({
     userType,
@@ -39,7 +37,6 @@ const gstRegistrationController = async (req, res) => {
     pinCode,
     wardNumberVillage,
     stateUT,
-    // Fields for file uploads are handled separately
   });
   try {
     const aadharCardPath = req.files.aadharCard[0].path;

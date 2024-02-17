@@ -75,37 +75,37 @@ const gstRegistrationSchema = new Schema({
     required: [true, "State/UT is required"],
     // Add enum if there are predefined options for states/UT
   },
-  // aadharCardFile: {
-  //   type: String,
-  //   // File handling logic required
-  // },
-  // panCardFile: {
-  //   type: String,
-  //   // File handling logic required
-  // },
-  // passportPhotoFile: {
-  //   type: String,
-  //   // File handling logic required
-  // },
-  // electricityBillFile: {
-  //   type: String,
-  //   // Optional, file handling logic required
-  // },
-  // ownershipDocumentShopFile: {
-  //   type: String,
-  //   required: [true, "Ownership document shop is required"],
-  //   // File handling logic required
-  // },
-  // gumastaMsmeKhasraElectricityBillFile: {
-  //   type: String,
-  //   required: [true, "Gumasta/MSME/Khasra/Electricity bill is required"],
-  //   // File handling logic required
-  // },
-  // bankDetailsFile: {
-  //   type: String,
-  //   required: [true, "Bank details are required"],
-  //   // File handling logic required
-  // },
+  aadharCardFile: {
+    type: String,
+    // File handling logic required
+  },
+  panCardFile: {
+    type: String,
+    // File handling logic required
+  },
+  passportPhotoFile: {
+    type: String,
+    // File handling logic required
+  },
+  electricityBillFile: {
+    type: String,
+    // Optional, file handling logic required
+  },
+  ownershipDocumentShopFile: {
+    type: String,
+    required: [true, "Ownership document shop is required"],
+    // File handling logic required
+  },
+  gumastaMsmeKhasraElectricityBillFile: {
+    type: String,
+    required: [true, "Gumasta/MSME/Khasra/Electricity bill is required"],
+    // File handling logic required
+  },
+  bankDetailsFile: {
+    type: String,
+    required: [true, "Bank details are required"],
+    // File handling logic required
+  },
 }, {
   timestamps: true,
 });
