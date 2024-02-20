@@ -4,12 +4,12 @@ import jwt from "jsonwebtoken";
 
 const registerUser = async (req, res) => {
   try {
-    const { email, fullName, password } = req.body;
+    const {  firstName, lastName, email, phoneNumber , password } = req.body;
 
-    if (!email || !fullName || !password) {
+    if (!email || !firstName || !password) {
       return res
         .status(400)
-        .send({ message: "Email, fullName, and password are required." });
+        .send({ message: "Email, firstName, and password are required." });
     }
 
     const userExists = await User.findOne({ email });
@@ -22,8 +22,10 @@ const registerUser = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = new User({
+      firstName,
+      lastName,
+      phoneNumber,
       email,
-      fullName,
       password: hashedPassword,
     });
 
