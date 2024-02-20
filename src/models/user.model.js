@@ -10,15 +10,9 @@ const userSchema = new Schema(
     },
     firstName: {
       type: String,
-      // unique: true,
-      trim: true,
-      index: true,
     },
     lastName: {
       type: String,
-      // unique: true,
-      trim: true,
-      index: true,
     },
     phoneNumber : {
       type : String,
