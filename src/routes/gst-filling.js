@@ -5,7 +5,7 @@ import { verifyJwt } from "../middleware/verifyJwt.js";
 const router = Router();
 
 router.route("/gst-filling").post(
-  verifyJwt,
+  // verifyJwt,
   upload.fields([
     { name: "saleBill", maxCount: 1 },
     { name: "otherBill", maxCount: 1 },

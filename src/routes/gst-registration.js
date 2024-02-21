@@ -5,7 +5,7 @@ import { verifyJwt } from "../middleware/verifyJwt.js";
 const router = Router();
 
 router.route("/gst-registration").post(
-  verifyJwt,
+  // verifyJwt,
   upload.fields([
     { name: "aadharCard", maxCount: 1 },
     { name: "panCard", maxCount: 1 },
