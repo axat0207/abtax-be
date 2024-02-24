@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 const app = express();
-const port = process.env.PORT || 7777;
+const port = process.env.PORT || 9999;
 
 app.use(
   cors({
@@ -20,12 +20,13 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.send("Server Is working Fine at root");
+  res.send("sakil");
 });
 
 app.get("/api/v1/", (req, res) => {
-  res.send("Server Is working Fine");
+  res.send("Server Is working Fine on th codem");
 });
+
 
 //Routes
 import userRouter from "./routes/user.js";
@@ -42,6 +43,9 @@ app.use('/api/v1/gstr',gstRegistration)
 
 import gstFiling from './routes/gst-filling.js';
 app.use('/api/v1/gstf',gstFiling)
+
+import cart from './routes/cart.js';
+app.use('/api/v1/cart',cart)
 
 
 app.listen(port, () => {

@@ -4,7 +4,7 @@ const gstRegistrationSchema = new Schema({
   userType: {
     type: String,
     required: [true, "User type is required"],
-    enum: ['Tax Payer', 'GST Practitioner', 'Tax Deductor', 'Other'], // Add all user types available
+    // enum: ['Tax Payer', 'GST Practitioner', 'Tax Deductor', 'Other'], // Add all user types available
   },
   panOrAadharName: {
     type: String,

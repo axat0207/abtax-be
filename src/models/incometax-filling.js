@@ -20,7 +20,7 @@ const incomeTaxSchema = new Schema({
   },
   tdsOption: {
     type: String,
-    enum: ["TDS Return", "Yes", "No"],
+    // enum: ["TDS Return", "Yes", "No"],
   },
   password: {
     type: String,

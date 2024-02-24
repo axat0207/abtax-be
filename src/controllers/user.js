@@ -156,4 +156,33 @@ const getUser = async (req, res) => {
   }
 };
 
-export { registerUser, login, logout, changeCurrentPassword, getUser };
+const updateUser = async (req, res) => {
+  const { firstName, lastName, phoneNumber, email } = req.body;
+  try {
+    const user = await User.findById(req.user?._id);
+    if (!user) {
+      return res.status(400).json({ message: "User Not found" });
+    }
+    if (firstName) {
+      user.firstName = firstName;
+    }
+    if (lastName) {
+      user.lastName = lastName;
+    }
+    if (phoneNumber) {
+      user.phoneNumber = phoneNumber;
+    }
+    if (email) {
+      user.email = email;
+    }
+
+    await user.save();
+
+    res.status(200).json({ user });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
+export { registerUser, login, logout, changeCurrentPassword, getUser, updateUser };

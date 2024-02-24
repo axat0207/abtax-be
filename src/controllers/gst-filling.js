@@ -56,7 +56,7 @@ const gstFilling = async (req, res) => {
 
     return res.status(201).json(setGstFiling);
   } catch (error) {
-    return res.status(500).json({ message: "Something went wrong: " + error });
+    return res.status(500).json({ message: error });
   }
 };
 

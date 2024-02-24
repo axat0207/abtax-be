@@ -4,7 +4,7 @@ const incomeTaxRegistrationSchema = new Schema({
   userType: {
     type: String,
     required: [true, "User type selection is required"],
-    enum: ['Individual', 'Company', 'HUF', 'Other'], // Replace with actual user types available
+    // enum: ['Individual', 'Company', 'HUF', 'Other'], // Replace with actual user types available
   },
   fullName: {
     type: String,
@@ -22,7 +22,7 @@ const incomeTaxRegistrationSchema = new Schema({
   gender: {
     type: String,
     required: [true, "Gender is required"],
-    enum: ['Male', 'Female', 'Other'], // Replace with actual gender options available
+    // enum: ['Male', 'Female', 'Other'], // Replace with actual gender options available
   },
   dateOfBirth: {
     type: Date,

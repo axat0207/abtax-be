@@ -40,7 +40,7 @@ const itrFilling = async (req, res) => {
 
     return res.status(201).json(setItr);
   } catch (error) {
-    return res.status(500).json({ message: "Something went wrong" + error });
+    return res.status(500).json({ message: error });
   }
 };
 

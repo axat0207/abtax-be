@@ -86,7 +86,7 @@ const gstRegistrationController = async (req, res) => {
   } catch (error) {
     return res
       .status(500)
-      .json({ message: "Something went wrong: " + error.message });
+      .json({ message: error.message });
   }
 };
 
