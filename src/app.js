@@ -47,6 +47,8 @@ app.use('/api/v1/gstf',gstFiling)
 import cart from './routes/cart.js';
 app.use('/api/v1/cart',cart)
 
+import checkout from './routes/billing-detail.js';
+app.use('/api/v1/billing',checkout)
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
