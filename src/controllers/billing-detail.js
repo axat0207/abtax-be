@@ -18,33 +18,34 @@ const billingDetails = async (req, res) => {
     message,
     product,
     price,
-    productId
+    productId, // Make sure this ID is being sent in the body of your request
   } = req.body;
 
   try {
-  
-    await gstFiling.findOneAndUpdate({ productId : productId}, { isPaid: true }, { new: true });
-    // console.log(he+ "  hoofgy");
- 
-console.log(productId + " this is produt")
-    // switch (product) {
-    //   case 'gstFiling':
-    //     console.log(productId)
-    //     const he = await gstFiling.findOneAndUpdate({ productId : productId}, { isPaid: true }, { new: true });
-    //     console.log(he+ "  hoofgy");
-    //     break;
-    //   case 'gstRegistration':
-    //     await gstRegistration.findOneAndUpdate({ productId : productId}, { isPaid: true }, { new: true });
-    //     break;
-    //   case 'itrFilling':
-    //     await itr.findOneAndUpdate({ productId : productId}, { isPaid: true }, { new: true });
-    //     break;
-    //   case 'itrRegistration':
-    //     await incomeTaxRegistration.findOneAndUpdate({ productId : productId}, { isPaid: true }, { new: true });
-    //     break;
-    // }
+    // Based on the product, update the corresponding document's isPaid status
+    // await gstFiling.findByIdAndUpdate(productId, {isPaid : true});
+    
+    switch (product) {
+      case 'gstFilling':
+        await gstFiling.findByIdAndUpdate(productId, { isPaid: true });
+        break;
+      case 'gstRegistration':
+        await gstRegistration.findByIdAndUpdate(productId, { isPaid: true });
+        break;
+      case 'itrFilling':
+        await itr.findByIdAndUpdate(productId, { isPaid: true });
+        break;
+      case 'itrRegistration':
+        await incomeTaxRegistration.findByIdAndUpdate(productId, { isPaid: true });
+        break;
+      default:
+        // If the product type does not match any case, you can choose to do nothing or handle it appropriately
+        console.log("Product type does not match any case.");
+        break;
+    }
 
-const newBillingDetail = await billingDetail.create({
+    // Create a new billing detail record
+    const newBillingDetail = await billingDetail.create({
       firstName,
       lastName,
       companyName,
@@ -60,11 +61,14 @@ const newBillingDetail = await billingDetail.create({
       price,
     });
 
+    // Return the newly created billing detail
     return res.status(201).json(newBillingDetail);
   } catch (error) {
+    // If there's an error, return a 500 status code and the error message
     return res.status(500).json({ message: error.message });
   }
 };
+
 
 const getBillingDetails = async (req, res) => {
   const { email } = req.user;

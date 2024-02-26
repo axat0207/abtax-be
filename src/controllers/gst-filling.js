@@ -64,10 +64,10 @@ const gstFilling = async (req, res) => {
 
 const getGstData = async (req, res) => {
   try {
-      const ItrRecords = await gstFiling.find({ isPaid: false }); // Retrieve all records where isPaid is false
+      const ItrRecords = await gstFiling.find({ isPaid: true }); // Retrieve all records where isPaid is false
 
       if (ItrRecords.length === 0) {
-          return res.status(404).json({ message: "No unpaid ITR records found." });
+          return res.status(404).json({ message: "No paid ITR records found." });
       }
 
       return res.status(200).json(ItrRecords);
