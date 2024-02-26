@@ -49,6 +49,7 @@ const gstFilling = async (req, res) => {
       nameOfSupplyGST,
       mobileNumber,
       supplyGSTNumber,
+      isPaid : false,
       saleBill: saleBill?.url || "",
       otherBill: otherBill?.url || "",
       purchaseBill: purchaseBill?.url || "",

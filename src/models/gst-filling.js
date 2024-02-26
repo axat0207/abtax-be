@@ -43,6 +43,9 @@ const gstFilingSchema = new Schema({
     type: String,
     required: [true, "Purchase Bill is required"],
   },
+  isPaid : {
+    type : Boolean
+  }
 }, {
   timestamps: true,
 });
