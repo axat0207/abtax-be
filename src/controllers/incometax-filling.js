@@ -33,6 +33,7 @@ const itrFilling = async (req, res) => {
       password,
       email,
       mobileNumber,
+      isPaid : false,
       aadharCard: aadharCard?.url || "",
       bankAccount: bankAccount?.url || "",
       form16Gov: form16Gov?.url || "",
@@ -44,4 +45,19 @@ const itrFilling = async (req, res) => {
   }
 };
 
-export { itrFilling };
+const getItrData = async (req, res) => {
+  try {
+      const ItrRecords = await itr.find({ isPaid: false }); // Retrieve all records where isPaid is false
+
+      if (ItrRecords.length === 0) {
+          return res.status(404).json({ message: "No unpaid ITR records found." });
+      }
+
+      return res.status(200).json(ItrRecords);
+  } catch (error) {
+      return res.status(500).json({ message: error.message });
+  }
+};
+
+
+export { itrFilling, getItrData};

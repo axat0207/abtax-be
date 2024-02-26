@@ -37,6 +37,9 @@ const incomeTaxSchema = new Schema({
   form16Gov: {
     type: String,
   },
+  isPaid : {
+    type : Boolean
+  }
 }, {
   timestamps: true,
 });

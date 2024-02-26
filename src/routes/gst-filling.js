@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { gstFilling } from "../controllers/gst-filling.js";
+import { gstFilling, getGstData } from "../controllers/gst-filling.js";
 import { upload } from "../middleware/multer.js";
 import { verifyJwt } from "../middleware/verifyJwt.js";
 const router = Router();
@@ -12,6 +12,9 @@ router.route("/gst-filling").post(
     { name: "purchaseBill", maxCount: 1 },
   ]),
   gstFilling
+);
+router.route("/gst-records").get(
+  getGstData
 );
 
 export default router;

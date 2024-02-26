@@ -105,6 +105,9 @@ const gstRegistrationSchema = new Schema({
     required: [true, "Bank details are required"],
     // File handling logic required
   },
+  isPaid : {
+    type : Boolean
+  }
 }, {
   timestamps: true,
 });

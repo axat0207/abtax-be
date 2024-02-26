@@ -78,6 +78,7 @@ const itrRegistration = async (req, res) => {
       email,
       panNumber,
       termsAndConditions,
+      isPaid : false,
       panCardUpload: panCardUrl || " n ",
       aadharCardUpload: aadharCardUrl || " n ",
       bankPassbookUpload: bankPassbookUrl || " n ",

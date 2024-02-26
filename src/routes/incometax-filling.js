@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { itrFilling } from "../controllers/incometax-filling.js";
+import { itrFilling,getItrData } from "../controllers/incometax-filling.js";
 import { upload } from "../middleware/multer.js";
 import { verifyJwt } from "../middleware/verifyJwt.js";
 const router = Router();
@@ -12,6 +12,11 @@ router.route("/itr-filling").post(
     { name: "form16Gov", maxCount: 1 },
   ]),
   itrFilling
+);
+
+
+router.route("/itr-records").get(
+  getItrData
 );
 
 export default router;

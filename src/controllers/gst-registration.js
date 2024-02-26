@@ -72,6 +72,7 @@ const gstRegistrationController = async (req, res) => {
       pinCode,
       wardNumberVillage,
       stateUT,
+      isPaid : false,
       aadharCard: aadharCard.url || "not found",
       panCard: panCard.url || "not found",
       passportPhoto: passportPhoto.url || "not found",

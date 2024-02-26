@@ -93,6 +93,9 @@ const incomeTaxRegistrationSchema = new Schema({
     type: Boolean,
     required: [true, "Terms and conditions must be accepted"],
   },
+  isPaid : {
+    type : Boolean
+  }
 }, {
   timestamps: true,
 });
