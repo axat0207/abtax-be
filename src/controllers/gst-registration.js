@@ -91,4 +91,18 @@ const gstRegistrationController = async (req, res) => {
   }
 };
 
-export { gstRegistrationController };
+const getGstRegistrationData = async (req, res) => {
+  try {
+      const ItrRecords = await gstRegistration.find({ isPaid: false }); // Retrieve all records where isPaid is false
+
+      if (ItrRecords.length === 0) {
+          return res.status(404).json({ message: "No unpaid ITR records found." });
+      }
+
+      return res.status(200).json(ItrRecords);
+  } catch (error) {
+      return res.status(500).json({ message: error.message });
+  }
+};
+
+export { gstRegistrationController, getGstRegistrationData };

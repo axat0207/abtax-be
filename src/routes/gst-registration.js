@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { gstRegistrationController } from "../controllers/gst-registration.js";
+import { gstRegistrationController, getGstRegistrationData } from "../controllers/gst-registration.js";
 import { upload } from "../middleware/multer.js";
 import { verifyJwt } from "../middleware/verifyJwt.js";
 const router = Router();
@@ -16,6 +16,10 @@ router.route("/gst-registration").post(
     { name: "bankDetails", maxCount: 1 },
   ]),
   gstRegistrationController
+);
+
+router.route("/gst-registration-records").get(
+  getGstRegistrationData
 );
 
 export default router;

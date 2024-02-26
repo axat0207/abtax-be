@@ -23,8 +23,8 @@ const billingDetails = async (req, res) => {
 
   try {
   
-    const he = await gstFiling.findOneAndUpdate({ productId : productId}, { isPaid: true }, { new: true });
-    console.log(he+ "  hoofgy");
+    await gstFiling.findOneAndUpdate({ productId : productId}, { isPaid: true }, { new: true });
+    // console.log(he+ "  hoofgy");
  
 console.log(productId + " this is produt")
     // switch (product) {
