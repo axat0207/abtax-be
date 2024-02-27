@@ -50,6 +50,9 @@ const billingDetailSchema = new Schema(
     email: {
       type: String,
     },
+    upiId: {
+      type: String,
+    },
     message: {
       type: String,
     },

@@ -18,7 +18,8 @@ const billingDetails = async (req, res) => {
     message,
     product,
     price,
-    productId, // Make sure this ID is being sent in the body of your request
+    productId,
+    upiId // Make sure this ID is being sent in the body of your request
   } = req.body;
 
   try {
@@ -59,6 +60,7 @@ const billingDetails = async (req, res) => {
       message,
       product,
       price,
+      upiId
     });
 
     // Return the newly created billing detail
