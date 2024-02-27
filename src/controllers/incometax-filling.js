@@ -47,7 +47,7 @@ const itrFilling = async (req, res) => {
 
 const getItrData = async (req, res) => {
   try {
-      const ItrRecords = await itr.find({ isPaid: false }); // Retrieve all records where isPaid is false
+      const ItrRecords = await itr.find({ isPaid: true }); // Retrieve all records where isPaid is false
 
       if (ItrRecords.length === 0) {
           return res.status(404).json({ message: "No unpaid ITR records found." });
