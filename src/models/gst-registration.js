@@ -18,22 +18,22 @@ const gstRegistrationSchema = new Schema({
   panNumber: {
     type: String,
     required: [true, "PAN number is required"],
-    // match: [/^[A-Z]{5}\d{4}[A-Z]$/, "Please fill a valid PAN number"],
+    match: [/^[A-Z]{5}\d{4}[A-Z]$/, "Please fill a valid PAN number"],
   },
   aadharNumber: {
     type: String,
     required: [true, "Aadhar number is required"],
-    // match: [/^\d{12}$/, "Please fill a valid Aadhar number"],
+    match: [/^\d{12}$/, "Please fill a valid Aadhar number"],
   },
   email: {
     type: String,
     required: [true, "Email is required"],
-    // match: [/\S+@\S+\.\S+/, "Please fill a valid email address"],
+    match: [/\S+@\S+\.\S+/, "Please fill a valid email address"],
   },
   mobileNumber: {
     type: String,
     required: [true, "Mobile number is required"],
-    // match: [/^\d{10}$/, "Please fill a valid mobile number"],
+    match: [/^\d{10}$/, "Please fill a valid mobile number"],
   },
   businessPurpose: {
     type: String,
