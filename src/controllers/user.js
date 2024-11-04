@@ -66,14 +66,13 @@ const login = async (req, res) => {
 
     const accessToken = jwt.sign(
       { _id: user._id },
-      process.env.ACCESS_TOKEN_SECRET,
+      process.env.ACCESS_TOKEN_SECRET || "secret",
       {
-        expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
+        expiresIn: process.env.ACCESS_TOKEN_EXPIRY || "1h",
       }
     );
     await user.save({ validateBeforeSave: false });
     const loggedInUser = await User.findById(user._id);
-      console.log(process.env.ACCESS_TOKEN_EXPIRY)
     return res.status(200).json({
       message: "User logged In Successfully",
       loggedInUser,

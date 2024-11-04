@@ -6,7 +6,7 @@ const port = process.env.PORT || 9999;
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: process.env.CORS_ORIGIN || "*",
     credential: true,
   })
 );
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.send("sakil");
+  res.send("Server is running");
 });
 
 app.get("/api/v1/", (req, res) => {

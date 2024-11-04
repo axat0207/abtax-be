@@ -10,7 +10,7 @@ export async function verifyJwt(req, res, next) {
 
     if (!token) return res.status(401).json({ message: "Unauthorized Access" });
 
-    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET || "secret");
     const user = await User.findById(decoded?._id);
     if (!user) {
       return res.status(400).json({ message: "Invalid token" });
